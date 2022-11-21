@@ -39,6 +39,6 @@ Select your project directory from within the container (e.g. `/code`).
 
 Finally, select **Start IDE and Connect**.
 
-This will start the process of downloading the IDE to the VM and starting the CLion Backend daemon so we can connect to the IDE.
+This will start the process of downloading the IDE to the container and starting the CLion Backend daemon so we can connect to the IDE.
 
 If it finishes successfully, you will have a CLion IDE window come up with the selected project directory.
