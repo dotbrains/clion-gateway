@@ -80,9 +80,6 @@ RUN useradd -m -s /bin/bash --create-home --base-dir /home student \
 # Expose port 22 for SSH server.
 EXPOSE 22
 
-# Expose 7777 for gdb server.
-EXPOSE 7777
-
 # Use docker-bash-rc file to set up bash and make it pretty.
 ADD docker-etc-profile.sh /etc/docker-etc-profile.sh
 RUN chmod 777 /etc/docker-etc-profile.sh

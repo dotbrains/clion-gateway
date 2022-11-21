@@ -8,8 +8,7 @@ services:
     image: nicholasadamou/clion-gateway:latest
     container_name: clion-gateway
     ports:
-      - "7776:22"
-      - "7777:7777"  
+      - "7776:22" 
     volumes:
       - ./:/code
 
