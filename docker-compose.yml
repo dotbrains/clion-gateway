@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  clion-gateway:
+    platform: linux/amd64
+    build:
+      context: environment
+    image: nicholasadamou/clion-gateway:latest
+    container_name: clion-gateway
+    ports:
+      - "7776:22"
+      - "7777:7777"  
+    volumes:
+      - ./:/code
+
