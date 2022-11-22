@@ -80,9 +80,6 @@ RUN useradd -m -s /bin/bash --create-home --base-dir /home student \
 # Expose port 22 for SSH server.
 EXPOSE 22
 
-# Expose 7777 for gdb server.
-EXPOSE 7777
-
 # Use docker-bash-rc file to set up bash and make it pretty.
 ADD docker-etc-profile.sh /etc/docker-etc-profile.sh
 RUN chmod 777 /etc/docker-etc-profile.sh
@@ -97,11 +94,11 @@ ENV LANGUAGE=en_US.UTF-8
 # Set up tmux.
 COPY tmux.conf /root/.tmux.conf
 COPY tmux /root/.tmux
-RUN git clone https://github.com/tmux-plugins/tpm /root/.tmux/plugins/tpm
+ADD tmux/plugins/tpm /root/.tmux/plugins/tpm
 
 COPY tmux.conf /home/student/.tmux.conf
 COPY tmux /home/student/.tmux
-RUN git clone https://github.com/tmux-plugins/tpm /home/student/.tmux/plugins/tpm
+ADD tmux/plugins/tpm /home/student/.tmux/plugins/tpm
 
 ########################################################
 # Add custom packages and development environment here
