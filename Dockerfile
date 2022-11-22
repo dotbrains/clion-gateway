@@ -94,11 +94,11 @@ ENV LANGUAGE=en_US.UTF-8
 # Set up tmux.
 COPY tmux.conf /root/.tmux.conf
 COPY tmux /root/.tmux
-RUN git clone https://github.com/tmux-plugins/tpm /root/.tmux/plugins/tpm
+ADD environment/tmux/plugins/tpm /root/.tmux/plugins/tpm
 
 COPY tmux.conf /home/student/.tmux.conf
 COPY tmux /home/student/.tmux
-RUN git clone https://github.com/tmux-plugins/tpm /home/student/.tmux/plugins/tpm
+ADD environment/tmux/plugins/tpm /home/student/.tmux/plugins/tpm
 
 ########################################################
 # Add custom packages and development environment here
